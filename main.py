@@ -70,5 +70,11 @@ if st.button("Review Code", disabled=st.session_state.running):
                     st.markdown(result)
             except Exception as e:
                 st.error(f"Error: {e}")
-            finally:
-                st.session_state.running = False
+
+# Footer: show model and a link to the OpenRouter base URL
+try:
+    st.markdown(f"---\nModel: [`{OPENROUTER_MODEL}`](https://openrouter.ai/{OPENROUTER_MODEL})")
+except Exception:
+    pass
+finally:
+    st.session_state.running = False
