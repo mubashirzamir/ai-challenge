@@ -32,7 +32,7 @@ reviewer = CodeReviewer(client, OPENROUTER_MODEL, APP_URL, APP_TITLE)
 # =========================
 
 st.set_page_config(page_title="Smart Code Reviewer", layout="wide")
-st.title("Smart Code Reviewer by Mubashir Zamir")
+st.title("Smart Code Reviewer")
 st.write("Analyze your code for readability, structure, and maintainability.")
 
 language = st.selectbox("Programming Language", ["Python", "JavaScript", "Java", "C++", "Other"])
@@ -43,10 +43,16 @@ language_final = language if language != "Other" else (custom_language or "Other
 
 if "running" not in st.session_state:
     st.session_state.running = False
-use_streaming = st.checkbox("Use Streaming Output", value=True, key="use_streaming")
+# use_streaming = st.checkbox("Use Streaming Output", value=True, key="use_streaming")
+use_streaming = True
 
 # Code input
 code_input = st.text_area("Paste your code here:", height=300)
+
+try:
+    st.markdown(f"Model: [`{OPENROUTER_MODEL}`](https://openrouter.ai/{OPENROUTER_MODEL})")
+except Exception:
+    pass
 
 # Button action
 if st.button("Review Code", disabled=st.session_state.running):
@@ -70,11 +76,5 @@ if st.button("Review Code", disabled=st.session_state.running):
                     st.markdown(result)
             except Exception as e:
                 st.error(f"Error: {e}")
-
-# Footer: show model and a link to the OpenRouter base URL
-try:
-    st.markdown(f"---\nModel: [`{OPENROUTER_MODEL}`](https://openrouter.ai/{OPENROUTER_MODEL})")
-except Exception:
-    pass
-finally:
-    st.session_state.running = False
+            finally:
+                st.session_state.running = False    
