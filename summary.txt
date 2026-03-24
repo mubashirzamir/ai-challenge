@@ -1,0 +1,11 @@
+Project Selected: Smart Code Reviewer
+
+Submission Includes:
+
+1. GitHub repository link: https://github.com/mubashirzamir/ai-challenge
+2. Streamlit link where the app is live: https://mubashir-zamir-ai-challenge.streamlit.app/
+3. This summary in TXT format
+
+I built a plug-and-play Smart Code Reviewer using open-source and free tools. The app provides an interface where users paste code snippets and receive structured reviews for readability, structure, and maintainability as required.
+
+I ideated the concept with ChatGPT, arrived on using Streamlit for the frontend, and OpenRouter for AI completions with the one of the free models available there (nvidia/nemotron-3-super-120b-a12b:free). The MVP was rapidly iterated using OpenCode with the GPT-5 Nano model, then refactored following SOLID principles for modularity. Final touches included UI/UX improvements and bug fixes, such as preventing multiple clicks on the analyze button.

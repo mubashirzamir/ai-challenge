@@ -1,6 +1,6 @@
 # Smart Code Reviewer AI
 
-[Placeholder Link](#)  
+[https://mubashir-zamir-ai-challenge.streamlit.app/](#)  
 
 A Streamlit prototype that uses OpenRouter to review code for readability, structure, and maintainability. Paste your code, select the programming language, toggle strict mode, and get a professional review along with suggested improvements and a positive note. Streaming output is also supported.  
 
