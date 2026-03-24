@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "ai-challenge"
+version = "0.1.0"
+description = ""
+authors = ["Mubashir Zamir <zamir.mubashir@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+openai = "python-dotenv"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
